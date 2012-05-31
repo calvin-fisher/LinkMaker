@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<link-package>
+  <variables>
+    <variable name="SyncRoot" default-value="%userprofile%\Dropbox"/>
+    <variable name="GameContainerName" default-value="Tropico 4"/>
+    <variable name="appdata" default-value="%appdata%"/>
+  </variables>
+  <paths>
+    <variable name="appdata">
+      <directory name="tropico 4" id="GameFiles"/>
+    </variable>
+    <variable name="SyncRoot">
+      <variable name="GameContainerName">
+        <directory name="AppData">
+          <directory name="tropico 4" id="SyncedFiles"/>
+        </directory>
+      </variable>
+    </variable>
+  </paths>
+  <links>
+    <link link-id="GameFiles" target-id="SyncedFiles"/>
+  </links>
+</link-package>
+
+

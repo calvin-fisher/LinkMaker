@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<link-package>
+  <variables>
+    <variable name="SyncRoot" default-value="%userprofile%\Dropbox\The Sims 3" />
+    <variable name="SteamPath" default-value="C:\Program Files (x86)\Steam" />
+    <variable name="SimsSteamPath" default-value="steamapps\common\the sims 3" />
+    <variable name="MyDocumentsPath" default-value="%userprofile%\My Documents\Electronic Arts\The Sims 3" />
+  </variables>
+  <paths>
+    <variable name="SteamPath">
+      <variable name="SimsSteamPath">
+        <directory name="Game">
+          <directory name="Bin">
+            <file name="d3dx9_31.dll" id="Dx9Dll" />
+          </directory>
+        </directory>
+        <directory name="Mods" id="Mods" />
+        <file name="Resource.cfg" id="ResourceCfg" />
+      </variable>
+    </variable>
+    <variable name="MyDocumentsPath">
+      <directory name="SaveGames" id="SaveGames" />
+      <directory name="Collections" id="Collections" />
+      <directory name="CurrentGame.sims3" id="CurrentGame" />
+      <directory name="Downloads" id="Downloads" />
+      <directory name="Exports" id="Exports" />
+      <directory name="InstalledWorlds" id="InstalledWorlds" />
+      <directory name="Library" id="Library" />
+      <directory name="Recorded Videos" id="RecordedVideos" />
+      <directory name="SavedOutfits" id="SavedOutfits" />
+      <directory name="Saves" id="Saves" />
+      <directory name="Screenshots" id="Screenshots" />
+      <file name="Options.ini" id="Options" />
+    </variable>
+    <variable name="SyncRoot">
+      <directory name="Hack Framework">
+        <directory name="Game">
+          <directory name="Bin">
+            <file name="d3dx9_31.dll" id="Dx9DllSync" />
+          </directory>
+        </directory>
+        <directory name="Mods" id="ModsSync" />
+        <file name="Resource.cfg" id="ResourceCfgSync" />
+      </directory>
+      <directory name="My Documents">
+        <directory name="SaveGames" id="SaveGamesSync"/>
+        <directory name="Collections" id="CollectionsSync" />
+        <directory name="CurrentGame.sims3" id="CurrentGameSync" />
+        <directory name="Downloads" id="DownloadsSync" />
+        <directory name="Exports" id="ExportsSync" />
+        <directory name="InstalledWorlds" id="InstalledWorldsSync" />
+        <directory name="Library" id="LibrarySync"/>
+        <directory name="Recorded Videos" id="RecordedVideosSync" />
+        <directory name="SavedOutfits" id="SavedOutfitsSync" />
+        <directory name="Saves" id="SavesSync" />
+        <directory name="Screenshots" id="ScreenshotsSync" />
+      </directory>
+    </variable>
+  </paths>
+  <links>
+    <!-- Hack Framework -->
+    <link link-id="Dx9Dll" target-id="Dx9DllSync"/>
+    <link link-id="Mods" target-id="ModsSync" />
+    <link link-id="ResourceCfg" target-id="ResourceCfgSync"/>
+    <!-- My Documents contents -->
+    <link link-id="Collections" target-id="CollectionsSync" />
+    <link link-id="CurrentGame" target-id="CurrentGameSync" />
+    <link link-id="Downloads" target-id="DownloadsSync" />
+    <link link-id="Exports" target-id="ExportsSync" />
+    <link link-id="InstalledWorlds" target-id="InstalledWorldsSync" />
+    <link link-id="Library" target-id="LibrarySync" />
+    <link link-id="RecordedVideos" target-id="RecordedVideosSync" />
+    <link link-id="SavedOutfits" target-id="SavedOutfitsSync" />
+    <link link-id="Saves" target-id="SavesSync" />
+    <link link-id="Screenshots" target-id="ScreenshotsSync" />
+  </links>
+</link-package>
+
+

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<!--  * The link-package element is NOT optional. -->
+<link-package>
+  <!--  * The variables element IS optional.
+        * When making links, the UI will prompt the user to confirm/edit each entry in this section. -->
+  <variables>
+    <!--  * Variable elements have the following attributes:
+          * - name (required) is how path elements will identify and reference the variable. Variable names must NOT be duplicated.
+          * - default-value (optional) specifies a default value for the variable. If omitted, it will simply start out blank.
+          * The value is parsed for environment variables; see http://en.wikipedia.org/wiki/Environment_variable#Windows -->
+  </variables>
+  <!--  * The paths element is NOT optional. This section describes the directories that are available to use as link or target paths. -->
+  <paths>
+    <!--  * The available types of elements are:
+          * - variable: inserts the path from one of the <variable> elements above
+          * - directory: hints to the program that it should be looking for a directory
+          * - file: hints to the program that it should be looking for a file
+          * This section contains any number of elements nested within each other in any combination. Except:
+          * - Putting anything inside of a file tag (which would make no sense)
+          * All path sub-elements can have the following attributes:
+          * - name (required) specifies either a file/folder on the filesystem, or the name of a <variable> tag to insert.
+          * - id (optional) specifies an anchor point to serve as one end of a link. Must be present in order to link to the file/folder listed. This MUST be unique.
+          * Some examples of valid ways to nest path sub-elements: -->
+  <variable>
+      <directory>
+        <directory />
+        <file />
+      </directory>
+    </variable>
+    <directory>
+      <file />
+      <variable>
+        <directory />
+      </variable>
+    </directory>
+  </paths>
+  <!--  * The links element is NOT optional. Each entry in this section will create a link from the target-id path to the link-id path.
+        * If target-id specifies a directory, the program will create a directory junction. If target-id specifies a file, the program will create a symbolic link.
+        * If the file/folder exists, it will be renamed with a timestamp appended to its existing name. -->
+  <links>
+    <!--  * Link elements have the following attributes:
+          * - link-id (required) specifies the id of an element in the <paths> section to use as the "virtual" end of the link (the "fake" one)
+          * - target-id (required) specifies the id of an element in the <paths> section to use as the "real" end of the link (the one that actually exists on disk)
+          * For either attribute, the id may NOT refer to a <variable> path element. -->
+  </links>
+</link-package>
+
+

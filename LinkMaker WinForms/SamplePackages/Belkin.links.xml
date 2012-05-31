@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<link-package>
+  <variables>
+    <variable name="AppData" default-value="%appdata%"/>
+    <variable name="SyncBase" default-value="%userprofile%\Dropbox"/>
+    <variable name="ContainerName" default-value="Belkin"/>
+  </variables>
+  <paths>
+    <variable name="AppData">
+      <directory name="Belkin" id="Files"/>
+    </variable>
+    <variable name="SyncBase">
+      <variable name="ContainerName">
+        <directory name="APPDATA">
+          <directory name="Belkin" id="Sync"/>
+        </directory>
+      </variable>
+    </variable>
+  </paths>
+  <links>
+    <link link-id="Files" target-id="Sync"/>
+  </links>
+</link-package>
+
+

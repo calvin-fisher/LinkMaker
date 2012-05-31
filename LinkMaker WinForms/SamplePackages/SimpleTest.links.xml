@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<link-package>
+  <variables>
+    <variable name="Target" default-value="C:\target" />
+    <variable name="Link" default-value="C:\link" />
+  </variables>
+  <paths>
+    <variable name="Target" id="Target"></variable>
+    <variable name="Link" id="Link"></variable>
+  </paths>
+  <links>
+    <link link-id="Link" target-id="Target" />
+  </links>
+</link-package>
